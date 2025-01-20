@@ -17,10 +17,6 @@ before_install:
 script:
     - docker run -e CI=true gustj3104/docker-react-app npm run test -- --coverage
 
-#테스트 성공 후 할 일
-after_success:
-    - echo "Test Success"
-
 deploy:
     edge: true
     provider: elasticbeanstalk
@@ -30,4 +26,4 @@ deploy:
     bucket-name: elasticbeanstalk-ap-northest-2-972153559337
     bucket-path: docker-react-app
     on:
-        branch: master
+        branch: main
